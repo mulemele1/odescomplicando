@@ -1,6 +1,6 @@
-# O Descomplicando
+# A Tecnologia
 
-Website do projeto O Descomplicando - especializado em desvendar os mistérios da TI.
+Website do projeto A Tecnologia - especializado em desvendar os mistérios da TI.
 
 ## Como executar localmente
 
@@ -53,7 +53,7 @@ git init
 git add .
 
 # Fazer commit
-git commit -m "Initial commit - O Descomplicando website"
+git commit -m "Initial commit - A Tecnologia website"
 
 # Adicionar remote (substitua SEU_USUARIO pelo seu username do GitHub)
 git remote add origin https://github.com/SEU_USUARIO/odescomplicando.git
