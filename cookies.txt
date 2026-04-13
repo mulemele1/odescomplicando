@@ -1,5 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-.odescomplicando.com	TRUE	/	FALSE	1999999999	__cf_bm	ytaDX7UeR6g3kLSxr3GqgYSIKOkPPJif9pIF2IFaSkg-1769177256-1.0.1.1-CKps07CwaAKPOvodK.5mq3x9QEexRDdWMeLCA_SdxPYi7uxJ0ii7aD2uxjK4DfGXSuFZWGe9bdkAljMwfjuoR_vK.b79wDP8jcB7JPooh94
-odescomplicando.com	TRUE	/	FALSE	1999999999	SameSite	None
-
