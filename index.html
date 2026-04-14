@@ -374,8 +374,56 @@
         .floating-call {
             position: fixed;
             bottom: 30px;
-            left: 30px;
+            right: 30px;
+            left: auto;
             z-index: 999;
+        }
+
+        .go-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 110px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            z-index: 998;
+        }
+
+        .go-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .go-top-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .go-top-btn i {
+            font-size: 1.2rem;
+            color: var(--white);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            text-decoration: none;
         }
 
         @keyframes pulse-ring {
@@ -426,7 +474,8 @@
 
         .floating-call-menu {
             position: absolute;
-            bottom: 80px;
+            top: 70px;
+            right: 0;
             left: 0;
             background: var(--white);
             border-radius: 16px;
@@ -434,7 +483,7 @@
             min-width: 280px;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(10px);
+            transform: translateY(-10px);
             transition: all 0.3s;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
             border: 1px solid var(--border);
@@ -993,7 +1042,14 @@
             .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
             .skills-grid, .projects-grid, .competencies-grid { grid-template-columns: 1fr; }
 
-            .floating-call { left: 20px; bottom: 20px; }
+            .floating-call { 
+                right: 20px; 
+                bottom: 20px; 
+                left: auto;
+            }
+
+            .go-top-btn { right: 90px; }
+
             .floating-call-btn { width: 55px; height: 55px; }
             
             .section { padding: 50px 0; }
@@ -1093,10 +1149,56 @@
 
         @media (hover: none) {
             .floating-call-menu {
-                position: fixed;
-                bottom: 100px;
-                left: 50%;
-                transform: translateX(-50%);
+                position: absolute;
+                bottom: auto;
+                top: 70px;
+                right: 0;
+                left: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .go-top-btn {
+                right: 90px;
+                bottom: 25px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .floating-call {
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .floating-call-btn {
+                width: 50px;
+                height: 50px;
+            }
+
+            .floating-call-menu {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                left: 0;
+                min-width: 250px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .go-top-btn {
+                right: 75px;
+                width: 42px;
+                height: 42px;
+            }
+
+            .floating-call {
+                right: 12px;
+                bottom: 12px;
+            }
+
+            .floating-call-btn {
+                width: 48px;
+                height: 48px;
             }
         }
     </style>
@@ -1105,10 +1207,10 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">
+                <a href="#" class="logo" onclick="scrollToTop(); return false;">
                     <div class="logo-icon">JC</div>
                     <span class="logo-name">Jacinto<span>.</span>Costa</span>
-                </div>
+                </a>
                 <div class="nav-social">
                     <a href="https://github.com/mulemele1" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://wa.me/258840647327" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1163,6 +1265,8 @@
             <div class="stat-item"><div class="stat-number">16+</div><div class="stat-label">Parcerias Atendidas</div></div>
         </div>
     </section>
+
+    <button class="go-top-btn" id="goTopBtn" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
 
     <div class="floating-call">
         <div class="floating-call-menu" id="callMenu">
@@ -1581,6 +1685,19 @@
             const callBtn = document.querySelector('.floating-call-btn');
             if (callMenu && callBtn && !callMenu.contains(event.target) && !callBtn.contains(event.target)) { 
                 callMenu.classList.remove('active'); 
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', () => {
+            const goTopBtn = document.getElementById('goTopBtn');
+            if (window.scrollY > 400) {
+                goTopBtn.classList.add('visible');
+            } else {
+                goTopBtn.classList.remove('visible');
             }
         });
 
