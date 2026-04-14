@@ -161,13 +161,30 @@
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
         }
 
-        .menu-toggle span {
+        .menu-toggle span.hamburger-line {
             width: 25px;
             height: 3px;
             background: var(--text-dark);
             border-radius: 3px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .menu-toggle.active span.hamburger-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.active span.hamburger-line:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .menu-toggle.active span.hamburger-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         /* Hero Section Otimizada - Espaços Reduzidos */
@@ -499,6 +516,7 @@
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
+            z-index: 1000;
         }
 
         .floating-call-menu a {
@@ -1026,7 +1044,7 @@
             }
 
             .nav-links.active { 
-                display: flex;
+                display: flex !important;
                 animation: slideDown 0.3s ease-out;
             }
 
@@ -1046,7 +1064,10 @@
                 to { opacity: 1; transform: translateY(0); }
             }
 
-            .menu-toggle { display: flex; }
+            .menu-toggle { 
+                display: flex; 
+                position: relative;
+            }
             .nav-social { display: none; }
 
             .hero {
@@ -1263,14 +1284,18 @@
                     <a href="mailto:jacintodacostamulemele@gmail.com" title="Email" class="jc-icon">JC</a>
                 </div>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#experiencia">Experiência</a></li>
-                    <li><a href="#competencias">Competências</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#sobre" onclick="toggleMenu()">Sobre</a></li>
+                    <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                    <li><a href="#projetos" onclick="toggleMenu()">Projetos</a></li>
+                    <li><a href="#experiencia" onclick="toggleMenu()">Experiência</a></li>
+                    <li><a href="#competencias" onclick="toggleMenu()">Competências</a></li>
+                    <li><a href="#contato" onclick="toggleMenu()">Contato</a></li>
                 </ul>
-                <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+                <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
             </nav>
         </div>
     </header>
@@ -1319,7 +1344,7 @@
             <a href="tel:+258840647327" class="call-phone"><i class="fas fa-phone"></i> Entrar em contato via Chamada</a>
             <a href="https://wa.me/258840647327" target="_blank" class="call-whatsapp"><i class="fab fa-whatsapp"></i> Entrar em contato via WhatsApp</a>
         </div>
-        <button class="floating-call-btn" onclick="toggleCallMenu()"><i class="fas fa-phone-alt"></i></button>
+        <button class="floating-call-btn" onclick="toggleCallMenu(event)"><i class="fas fa-phone-alt"></i></button>
     </div>
 
     <!-- Seção Sobre -->
@@ -1713,16 +1738,21 @@
 
     <script>
         function toggleMenu() { 
-            document.getElementById('navLinks').classList.toggle('active'); 
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('menuToggle');
+            navLinks.classList.toggle('active'); 
+            menuToggle.classList.toggle('active');
         }
         
         document.querySelectorAll('.nav-links a').forEach(link => { 
             link.addEventListener('click', () => { 
                 document.getElementById('navLinks').classList.remove('active'); 
+                document.getElementById('menuToggle').classList.remove('active');
             }); 
         });
 
-        function toggleCallMenu() { 
+        function toggleCallMenu(event) { 
+            event.stopPropagation();
             document.getElementById('callMenu').classList.toggle('active'); 
         }
         
@@ -1732,6 +1762,10 @@
             if (callMenu && callBtn && !callMenu.contains(event.target) && !callBtn.contains(event.target)) { 
                 callMenu.classList.remove('active'); 
             }
+        });
+        
+        document.getElementById('callMenu').addEventListener('click', function(event) {
+            event.stopPropagation();
         });
 
         function scrollToTop() {
