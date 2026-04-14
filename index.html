@@ -683,9 +683,189 @@
             border-radius: 20px;
             border: 1px solid var(--border);
         }
+        .contact-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+            color: var(--text-dark);
+        }
+        .contact-info > p {
+            color: var(--text-body);
+            margin-bottom: 25px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+        .contact-item a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .contact-item a:hover { color: var(--primary); }
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            border: 1px solid var(--border);
+        }
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        .competency-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .competency-list { list-style: none; }
+        .competency-list li {
+            padding: 8px 0;
+            color: var(--text-body);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .competency-list li:last-child { border-bottom: none; }
+        .competency-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        .project-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        .project-content p {
+            color: var(--text-body);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .project-link:hover { text-decoration: underline; }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+        .tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        .skill-card p {
+            color: var(--text-body);
+            font-size: 0.85rem;
+        }
+        .experience-item:last-child { padding-bottom: 0; }
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            background: var(--white);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+        }
+        .experience-header h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+        .experience-company {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+        .experience-period {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .experience-item > p {
+            color: var(--text-body);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            background: var(--white);
+            padding: 18px 22px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            margin-top: -8px;
+        }
         .hidden-items { display: none; }
         .hidden-items.show { display: grid; }
         .show-more-btn { display: flex; justify-content: center; margin-top: 40px; }
+        .show-more-btn .btn {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px 35px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .show-more-btn .btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
         footer {
             padding: 35px 0;
             text-align: center;
@@ -902,7 +1082,7 @@
 
     <button class="go-top-btn" id="goTopBtn" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
 
-    <!-- Demais seções (Sobre, Skills, Projetos, Experiência, Competências, Contato) mantidas igual ao original -->
+    <!-- Seção Sobre -->
     <section class="section" id="sobre" style="background: var(--bg-light);">
         <div class="container">
             <div class="section-header animate-on-scroll">
@@ -912,36 +1092,347 @@
             <div class="about-grid">
                 <div class="about-content animate-on-scroll delay-1">
                     <h3>Full-cycle developer: Do frontend à infraestrutura</h3>
-                    <p><strong>Engenheiro Informático</strong> full-stack com <strong>5+ anos de experiência</strong> end-to-end em desenvolvimento de software, engenharia de dados, segurança da informação e business intelligence.</p>
-                    <p>Atuei em <strong>projetos de alta complexidade</strong> para instituições como <strong>Instituto Nacional de Saúde (INS)</strong> e <strong>Escaleno</strong>, desenvolvendo sistemas completos e seguros.</p>
+                    <p><strong>Engenheiro Informático</strong> full-stack com <strong>5+ anos de experiência</strong> end-to-end em desenvolvimento de software, engenharia de dados, segurança da informação e business intelligence. Minha abordagem <strong>holística</strong> permite entregar soluções completas, eliminando gargalos de comunicação entre equipes técnicas e de negócios.</p>
+                    <p>Atuei em <strong>projetos de alta complexidade</strong> para instituições como <strong>Instituto Nacional de Saúde (INS)</strong> e <strong>Escaleno</strong>, desenvolvendo sistemas que processam milhares de registros, dashboards que monitoram KPIs críticos em tempo real, e arquiteturas seguras que protegem dados sensíveis de pesquisas internacionais.</p>
+                    <div style="margin: 20px 0; display: flex; flex-wrap: wrap; gap: 10px;">
+                        <span style="background: var(--primary); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem;"><i class="fas fa-code"></i> Clean Code</span>
+                        <span style="background: var(--primary); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem;"><i class="fas fa-database"></i> Data Modeling</span>
+                        <span style="background: var(--primary); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem;"><i class="fas fa-cloud"></i> Cloud Ready</span>
+                        <span style="background: var(--primary); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem;"><i class="fas fa-lock"></i> Security First</span>
+                        <span style="background: var(--primary); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem;"><i class="fas fa-chart-line"></i> Data-Driven</span>
+                    </div>
+                    <p style="color: var(--primary); font-size: 0.9rem; margin-top: 15px; font-style: italic;">
+                        <i class="fas fa-quote-left"></i> Não apenas escrevo código — construo soluções que resolvem problemas reais e geram valor.
+                    </p>
                 </div>
                 <div class="about-content animate-on-scroll delay-2">
                     <h3>Formação & Certificações</h3>
-                    <p><strong>Licenciatura em Engenharia Informática</strong><br>Instituto Superior Politécnico de Tete | 2020</p>
-                    <p><strong>Certificações:</strong> Good Clinical Practice (GCP), Introduction to Research Ethics</p>
+                    <p><strong>Licenciatura em Engenharia Informática</strong><br>Instituto Superior Politécnico de Tete | 2020 | Classificação: Excelente</p>
+                    <p><strong>Curso Básico de TIC's</strong><br>Instituto Nacional de Tecnologias de Informação e Comunicação | 2015</p>
+                    <p><strong>12ª Classe</strong><br>Escola Secundária Patrice Lumumba | 2014</p>
+                    <p style="margin-top: 20px;"><strong>Certificações:</strong></p>
+                    <ul style="list-style: none; margin-top: 12px;">
+                        <li style="padding: 8px 0; color: var(--text-body);"><i class="fas fa-certificate" style="color: var(--secondary); margin-right: 10px;"></i>Good Clinical Practice (GCP)</li>
+                        <li style="padding: 8px 0; color: var(--text-body);"><i class="fas fa-certificate" style="color: var(--secondary); margin-right: 10px;"></i>Introduction to Research Ethics</li>
+                    </ul>
+                    <p style="margin-top: 20px;"><strong>Idiomas:</strong></p>
+                    <ul style="list-style: none; margin-top: 12px;">
+                        <li style="padding: 8px 0; color: var(--text-body);"><i class="fas fa-language" style="color: var(--primary); margin-right: 10px;"></i>Português - Nativo</li>
+                        <li style="padding: 8px 0; color: var(--text-body);"><i class="fas fa-language" style="color: var(--primary); margin-right: 10px;"></i>Inglês - Técnico avançado</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Seção Skills -->
     <section class="section" id="skills">
         <div class="container">
-            <div class="section-header animate-on-scroll"><h2>Minhas Skills</h2><p>Tecnologias e competências que domino</p></div>
-            <div class="skills-grid">
-                <div class="skill-card"><div class="skill-icon"><i class="fas fa-code"></i></div><h3>Desenvolvimento Web</h3><p>HTML5, CSS3, JavaScript, PHP 8, Laravel, Bootstrap 5</p></div>
-                <div class="skill-card"><div class="skill-icon"><i class="fas fa-database"></i></div><h3>Banco de Dados</h3><p>MySQL, PostgreSQL, SQL Server, modelagem e otimização</p></div>
-                <div class="skill-card"><div class="skill-icon"><i class="fas fa-shield-alt"></i></div><h3>Segurança da Informação</h3><p>Políticas de segurança, backup e proteção de dados</p></div>
+            <div class="section-header animate-on-scroll">
+                <h2>Minhas Skills</h2>
+                <p>Tecnologias e competências que domino para entregar resultados de qualidade</p>
+            </div>
+            <div class="skills-grid" id="skillsGrid">
+                <div class="skill-card animate-on-scroll delay-1">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Desenvolvimento Web</h3>
+                    <p>HTML5, CSS3, JavaScript, PHP 8, Laravel, Bootstrap 5. Criação de websites responsivos e sistemas web modernos.</p>
+                </div>
+                <div class="skill-card animate-on-scroll delay-2">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>Banco de Dados</h3>
+                    <p>MySQL, PostgreSQL, SQL Server. Modelagem, administração e otimização de consultas complexas.</p>
+                </div>
+                <div class="skill-card animate-on-scroll delay-3">
+                    <div class="skill-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Helpdesk & Suporte</h3>
+                    <p>Suporte técnico 1ª e 2ª linha, diagnóstico de problemas, manutenção de hardware e software.</p>
+                </div>
+                <div class="skill-card animate-on-scroll delay-1">
+                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Segurança da Informação</h3>
+                    <p>Políticas de segurança, backup de dados, proteção contra ameaças e boas práticas de segurança.</p>
+                </div>
+                <div class="skill-card animate-on-scroll delay-2">
+                    <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Power BI & Análise</h3>
+                    <p>Dashboards interativos, relatórios analíticos, DAX, Excel Avançado (VBA, tabelas dinâmicas).</p>
+                </div>
+                <div class="skill-card animate-on-scroll delay-3">
+                    <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Redes & Infraestrutura</h3>
+                    <p>Configuração de redes, servidores Linux (Apache/Nginx), TCP/IP, DHCP, DNS.</p>
+                </div>
+                <div class="skill-card hidden-items" id="hiddenSkills1">
+                    <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Desenvolvimento Mobile</h3>
+                    <p>Progressive Web Apps (PWA), React Native básico, interfaces mobile responsivas.</p>
+                </div>
+                <div class="skill-card hidden-items" id="hiddenSkills2">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h3>Administração de Sistemas</h3>
+                    <p>Windows Server, Linux Server, Apache, Nginx, configuração e manutenção de servidores.</p>
+                </div>
+            </div>
+            <div class="show-more-btn" id="skillsShowMore">
+                <button class="btn" onclick="showMoreSkills()"><i class="fas fa-plus"></i> Ver Mais Skills</button>
             </div>
         </div>
     </section>
 
-    <!-- Seções adicionais resumidas para manter código funcional -->
+    <!-- Seção Projetos -->
+    <section class="section" id="projetos" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Projetos Realizados</h2>
+                <p>Confira alguns dos trabalhos que já desenvolvi ao longo da minha carreira</p>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card animate-on-scroll delay-1">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Gestão de Obras">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gestão de Obras</h3>
+                        <p>Sistema completo de gestão para construção civil com controle de projetos, finanças e equipe.</p>
+                        <a href="https://gestaodeobra.escaleno.co.mz" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Ver projeto</a>
+                        <div class="project-tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span></div>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll delay-2">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80" alt="Website Institucional">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Website Institucional</h3>
+                        <p>Website institucional moderno e responsivo para empresa de tecnologia.</p>
+                        <a href="https://www.escaleno.co.mz" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Ver projeto</a>
+                        <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll delay-3">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Sistema Hospitalar">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema Hospitalar</h3>
+                        <p>Sistema de gestão hospitalar completo para administração de pacientes e consultas.</p>
+                        <a href="https://hospital-hgm.escaleno.co.mz" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Ver projeto</a>
+                        <div class="project-tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span></div>
+                    </div>
+                </div>
+                <div class="project-card hidden-items" id="hiddenProject1">
+                    <div class="project-image"><i class="fas fa-users"></i></div>
+                    <div class="project-content">
+                        <h3>BeConnected</h3>
+                        <p>Plataforma de conexão e networking profissional.</p>
+                        <a href="https://beconnected.escaleno.co.mz" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Ver projeto</a>
+                        <div class="project-tags"><span class="tag">Web</span><span class="tag">Responsivo</span></div>
+                    </div>
+                </div>
+                <div class="project-card hidden-items" id="hiddenProject2">
+                    <div class="project-image"><i class="fas fa-download"></i></div>
+                    <div class="project-content">
+                        <h3>Prijasa</h3>
+                        <p>Sistema empresarial com múltiplas aplicações para gestão industrial.</p>
+                        <a href="https://prijasa.vercel.app" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Ver projeto</a>
+                        <div class="project-tags"><span class="tag">Multi-App</span><span class="tag">Gestão</span></div>
+                    </div>
+                </div>
+                <div class="project-card hidden-items" id="hiddenProject3">
+                    <div class="project-image"><i class="fas fa-film"></i></div>
+                    <div class="project-content">
+                        <h3>JC Filmes</h3>
+                        <p>Portfólio cinematográfico e galeria de trabalhos audiovisuais.</p>
+                        <a href="http://jcmfilmes.vercel.app" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Ver projeto</a>
+                        <div class="project-tags"><span class="tag">Portfolio</span><span class="tag">Galeria</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more-btn" id="projectsShowMore">
+                <button class="btn" onclick="showMoreProjects()"><i class="fas fa-plus"></i> Ver Mais Projetos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Experiência -->
+    <section class="section" id="experiencia">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Experiência Profissional</h2>
+                <p>Minha trajetória no mercado de tecnologia</p>
+            </div>
+            <div class="experience-list">
+                <div class="experience-item animate-on-scroll delay-1">
+                    <div class="experience-header">
+                        <div><h3>Profissional de TI | Desenvolvedor Web</h3><span class="experience-company">Escaleno</span></div>
+                        <span class="experience-period">2026 - Presente</span>
+                    </div>
+                    <p>Desenvolvimento de aplicações web, sistemas administrativos e websites para clientes diversos. Criação de APIs RESTful, integração com bases de dados MySQL/PostgreSQL, implementação de CRUD completo com PHP 8 e JavaScript.</p>
+                </div>
+                <div class="experience-item animate-on-scroll delay-2">
+                    <div class="experience-header">
+                        <div><h3>Informático & Gestor de Dados</h3><span class="experience-company">Instituto Nacional de Saúde (INS) / CISPOC</span></div>
+                        <span class="experience-period">2022 - Presente</span>
+                    </div>
+                    <p>Gestão de dados em projetos de investigação de larga escala (TB-CAPT, XACT III, TIMPANI, ERASE-TB). Desenvolvimento de dashboards analíticos com Excel Avançado (VBA) e Power BI. Administração de bases de dados OpenClinica, RedCap e Viedoc.</p>
+                </div>
+                <div class="experience-item animate-on-scroll delay-3">
+                    <div class="experience-header">
+                        <div><h3>Micro IT / Técnico de Helpdesk</h3><span class="experience-company">Triana Business Solutions</span></div>
+                        <span class="experience-period">2021 - 2022</span>
+                    </div>
+                    <p>Suporte técnico de 1ª e 2ª linha, resolução de problemas técnicos e gestão de chamados. Manutenção de hardware, software e apoio à infraestrutura de rede.</p>
+                </div>
+                <div class="experience-item animate-on-scroll delay-4">
+                    <div class="experience-header">
+                        <div><h3>Estagiário Pré-Profissional em TI</h3><span class="experience-company">Consultoria FSilva</span></div>
+                        <span class="experience-period">2020</span>
+                    </div>
+                    <p>Desenvolvimento de um sistema interno de gestão de serviços e emissão de relatórios. Configuração de redes e equipamentos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Competências -->
+    <section class="section" id="competencias" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Competências Técnicas</h2>
+                <p>Stack tecnológico completo para soluções completas</p>
+            </div>
+            <div class="competencies-grid" id="competenciesGrid">
+                <div class="competency-category animate-on-scroll delay-1">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <ul class="competency-list">
+                        <li>PHP 8 procedural e OOP</li>
+                        <li>mysqli com prepared statements</li>
+                        <li>CRUD completo em aplicações</li>
+                        <li>Autenticação e sessões</li>
+                        <li>Hash de senhas seguro</li>
+                        <li>Validação e sanitização</li>
+                        <li>APIs RESTful</li>
+                        <li>Node.js básico</li>
+                    </ul>
+                </div>
+                <div class="competency-category animate-on-scroll delay-2">
+                    <h3><i class="fas fa-database"></i> Base de Dados</h3>
+                    <ul class="competency-list">
+                        <li>MySQL / MariaDB</li>
+                        <li>PostgreSQL / SQL Server</li>
+                        <li>Modelagem relacional</li>
+                        <li>Queries complexas (JOINs)</li>
+                        <li>Otimização de consultas</li>
+                        <li>Exportação para Excel</li>
+                        <li>OpenClinica / RedCap</li>
+                        <li>Viedoc</li>
+                    </ul>
+                </div>
+                <div class="competency-category animate-on-scroll delay-3">
+                    <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+                    <ul class="competency-list">
+                        <li>HTML5 semântico</li>
+                        <li>CSS3 com Bootstrap 5</li>
+                        <li>Layouts responsivos</li>
+                        <li>JavaScript Vanilla (ES6+)</li>
+                        <li>Manipulação do DOM</li>
+                        <li>Validações de formulários</li>
+                        <li>AJAX e JSON</li>
+                        <li>Vue.js noções</li>
+                    </ul>
+                </div>
+                <div class="competency-category hidden-items" id="hiddenComp1">
+                    <h3><i class="fas fa-chart-bar"></i> Análise de Dados</h3>
+                    <ul class="competency-list">
+                        <li>Power BI (DAX, dashboards)</li>
+                        <li>Excel Avançado (VBA)</li>
+                        <li>Tabelas dinâmicas</li>
+                        <li>KPIs e indicadores</li>
+                        <li>Python para análise</li>
+                        <li>Relatórios gerenciais</li>
+                    </ul>
+                </div>
+                <div class="competency-category hidden-items" id="hiddenComp2">
+                    <h3><i class="fas fa-shield-alt"></i> Segurança & Infra</h3>
+                    <ul class="competency-list">
+                        <li>Políticas de segurança</li>
+                        <li>Backup e recuperação</li>
+                        <li>Controlo de acessos</li>
+                        <li>Linux Server</li>
+                        <li>Apache / Nginx</li>
+                        <li>Git controlo de versões</li>
+                    </ul>
+                </div>
+                <div class="competency-category hidden-items" id="hiddenComp3">
+                    <h3><i class="fas fa-headset"></i> Suporte & Gestão</h3>
+                    <ul class="competency-list">
+                        <li>Helpdesk 1ª e 2ª linha</li>
+                        <li>Gestão de projetos</li>
+                        <li>Metodologias ágeis</li>
+                        <li>Documentação técnica</li>
+                        <li>Redes TCP/IP, DNS, DHCP</li>
+                        <li>Manutenção de hardware</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="show-more-btn" id="competenciesShowMore">
+                <button class="btn" onclick="showMoreCompetencies()"><i class="fas fa-plus"></i> Ver Mais Competências</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
     <section class="section" id="contato">
         <div class="container">
-            <div class="section-header"><h2>Entre em Contato</h2><p>Vamos conversar sobre seu projeto</p></div>
+            <div class="section-header animate-on-scroll">
+                <h2>Entre em Contato</h2>
+                <p>Vamos conversar sobre como posso ajudar no seu próximo projeto</p>
+            </div>
             <div class="contact-grid">
-                <div class="contact-info"><h3>Informações</h3><div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:jacintodacostamulemele@gmail.com">jacintodacostamulemele@gmail.com</a></div><div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+258840647327">840 647 327</a></div></div>
-                <div class="contact-info"><h3>Redes Sociais</h3><div class="social-links"><a href="https://github.com/mulemele1" class="social-link"><i class="fab fa-github"></i></a><a href="https://wa.me/258840647327" class="social-link"><i class="fab fa-whatsapp"></i></a></div></div>
+                <div class="contact-info animate-on-scroll delay-1">
+                    <h3>Informações de Contato</h3>
+                    <p>Estou disponível para novos projetos, oportunidades de trabalho ou apenas uma conversa sobre tecnologia!</p>
+                    <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:jacintodacostamulemele@gmail.com">jacintodacostamulemele@gmail.com</a></div>
+                    <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+258840647327">840 647 327</a> / <a href="tel:+258870447327">870 447 327</a></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Moçambique</span></div>
+                    <div class="social-links">
+                        <a href="https://github.com/mulemele1" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/258840647327" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:jacintodacostamulemele@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="contact-info animate-on-scroll delay-2">
+                    <h3>Contato Rápido</h3>
+                    <p>Escolha a melhor forma de entrar em contato:</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 25px 0;">
+                        <a href="https://wa.me/258840647327" target="_blank" style="background: #25d366; color: white; padding: 12px; border-radius: 10px; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="tel:+258840647327" style="background: var(--primary); color: white; padding: 12px; border-radius: 10px; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                            <i class="fas fa-phone"></i> Ligar
+                        </a>
+                    </div>
+                    <div style="margin-bottom: 25px; padding: 15px; background: var(--light); border-radius: 12px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><i class="far fa-clock"></i> Seg-Sex</span>
+                            <span>08h - 18h</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span><i class="far fa-clock"></i> Sábado</span>
+                            <span>09h - 13h</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span style="background: var(--light); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem;"><i class="fas fa-code"></i> Web</span>
+                        <span style="background: var(--light); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem;"><i class="fas fa-chart-line"></i> BI</span>
+                        <span style="background: var(--light); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem;"><i class="fas fa-shield-alt"></i> Segurança</span>
+                        <span style="background: var(--light); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem;"><i class="fas fa-database"></i> Banco de Dados</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1063,6 +1554,29 @@
                 header.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.1)' : '0 2px 20px rgba(0,0,0,0.05)';
             }
         });
+        
+        // Mostrar mais skills
+        function showMoreSkills() {
+            document.getElementById('hiddenSkills1').classList.add('show');
+            document.getElementById('hiddenSkills2').classList.add('show');
+            document.getElementById('skillsShowMore').style.display = 'none';
+        }
+        
+        // Mostrar mais projetos
+        function showMoreProjects() {
+            document.getElementById('hiddenProject1').classList.add('show');
+            document.getElementById('hiddenProject2').classList.add('show');
+            document.getElementById('hiddenProject3').classList.add('show');
+            document.getElementById('projectsShowMore').style.display = 'none';
+        }
+        
+        // Mostrar mais competências
+        function showMoreCompetencies() {
+            document.getElementById('hiddenComp1').classList.add('show');
+            document.getElementById('hiddenComp2').classList.add('show');
+            document.getElementById('hiddenComp3').classList.add('show');
+            document.getElementById('competenciesShowMore').style.display = 'none';
+        }
     </script>
 </body>
 </html>
