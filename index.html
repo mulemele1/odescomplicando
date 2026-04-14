@@ -159,10 +159,15 @@
         .menu-toggle {
             display: none;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
             gap: 5px;
             cursor: pointer;
-            padding: 5px;
             z-index: 1001;
+            background: transparent;
+            border: none;
         }
 
         .menu-toggle span.hamburger-line {
@@ -171,11 +176,12 @@
             background: var(--text-dark);
             border-radius: 3px;
             transition: all 0.3s ease;
-            transform-origin: center;
+            display: block;
         }
 
         .menu-toggle.active span.hamburger-line:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
+            background: var(--text-dark);
         }
 
         .menu-toggle.active span.hamburger-line:nth-child(2) {
@@ -185,6 +191,7 @@
 
         .menu-toggle.active span.hamburger-line:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
+            background: var(--text-dark);
         }
 
         /* Hero Section Otimizada - Espaços Reduzidos */
@@ -399,7 +406,7 @@
             bottom: 30px;
             left: 30px;
             right: auto;
-            z-index: 999;
+            z-index: 9999;
         }
 
         .go-top-btn {
@@ -1028,7 +1035,7 @@
             }
 
             .nav-links {
-                display: none;
+                display: none !important;
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -1045,7 +1052,6 @@
 
             .nav-links.active { 
                 display: flex !important;
-                animation: slideDown 0.3s ease-out;
             }
 
             .nav-links li {
@@ -1121,6 +1127,13 @@
                 left: 0;
                 right: auto;
                 min-width: 220px;
+            }
+            
+            .floating-call-menu.active {
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: translateY(0) !important;
             }
             
             .section { padding: 45px 0; }
@@ -1749,6 +1762,25 @@
                 document.getElementById('navLinks').classList.remove('active'); 
                 document.getElementById('menuToggle').classList.remove('active');
             }); 
+        });
+        
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('menuToggle');
+            if (window.innerWidth <= 768 && 
+                !navLinks.contains(event.target) && 
+                !menuToggle.contains(event.target) &&
+                navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.getElementById('navLinks').classList.remove('active');
+                document.getElementById('menuToggle').classList.remove('active');
+            }
         });
 
         function toggleCallMenu(event) { 
